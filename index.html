@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDev - Welcome</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* تحويل الـ Body بالكامل ليكون هو لوحة التصميم الأساسية */
+        body {
+            background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 50%, #dfe7f0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(24px, 5vw, 48px) clamp(16px, 4vw, 32px);
+            color: #1e293b;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* محاذاة وتحديد عرض المحتوى الأساسي في منتصف الشاشة ليظل مريحاً للعين على اللاب توب والتابلت */
+        .content-container {
+            width: 100%;
+            max-width: 460px; /* العرض المثالي لتناسق العناصر */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Modern Floating Logo Style --- */
+        .logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .logo-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: clamp(50%, 15vw + 35%, 65%);
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.04);
+        }
+
+        /* --- Typography (Responsive) --- */
+        .headline {
+            font-size: clamp(1.4rem, 4vw + 0.5rem, 1.8rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+
+        .subheadline {
+            font-size: clamp(0.9rem, 2vw + 0.5rem, 1rem);
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 36px;
+            font-weight: 400;
+            max-width: 400px;
+        }
+
+        /* --- Button Stack --- */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: clamp(15px, 3vw, 18px) 24px;
+            font-size: clamp(0.92rem, 2vw + 0.5rem, 1rem);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 16px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        /* Button 1: Registration Form */
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 14px rgba(3, 105, 161, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(3, 105, 161, 0.4);
+            filter: brightness(1.05);
+        }
+
+        /* Button 2: WhatsApp Chat */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 14px rgba(21, 128, 61, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(21, 128, 61, 0.35);
+            filter: brightness(1.05);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* --- Social Media Container --- */
+        .social-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .social-icon {
+            font-size: 1.35rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .social-icon.linkedin { 
+            background-color: #0077b5; 
+            color: #ffffff; 
+        }
+        .social-icon.facebook { 
+            background-color: #1877f2; 
+            color: #ffffff; 
+        }
+        .social-icon.instagram { 
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            color: #ffffff; 
+        }
+
+        .social-icon:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+            filter: brightness(1.1);
+        }
+
+        /* --- Footer --- */
+        .footer-text {
+            margin-top: 44px;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
+            font-weight: 600;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <!-- Logo Container -->
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="BDev Logo" class="logo-img">
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <h1 class="headline">Don't Just Learn Code , Build Real Products!</h1>
+        <p class="subheadline">Join BDev's Simulated Internship Program. Build production-ready projects, and launch your tech career today.</p>
+
+        <!-- Action Buttons -->
+        <div class="links-wrapper">
+            <!-- Button 1: Registration Form -->
+            <a href="https://forms.gle/2HLziDdkXxyuDpFc6" target="_blank" class="btn btn-primary">
+                Register for Free Intro Session 
+            </a>
+
+            <!-- Button 2: Direct Support -->
+            <a href="https://wa.me/01105134262" target="_blank" class="btn btn-whatsapp">
+                Have Questions? Chat with Us <i class="fab fa-whatsapp" style="color: #ffffff;"></i>
+            </a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-container">
+            <a href="https://www.linkedin.com/company/b-deveolper/" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1DA16vYRSq/" target="_blank" class="social-icon facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/b_deveolper?utm_source=qr&igsh=MXh1dHNzamZ6M3Vkdw==" target="_blank" class="social-icon instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <p class="footer-text">© 2026 BDev. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
